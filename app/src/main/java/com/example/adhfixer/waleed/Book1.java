@@ -15,7 +15,7 @@ public class Book1 extends AppCompatActivity {
         setContentView(R.layout.activity_book1);
 
 
-        String file = getIntent().getStringExtra("file");
+        String file = getIntent().getStringExtra("Iberia");
         String filename = setFileName(file);
         pdfView = findViewById(R.id.pdfView);
         //   pdfView.fromAsset("mozart.pdf").load();
@@ -73,6 +73,10 @@ public class Book1 extends AppCompatActivity {
          }
      }*/
     public String setFileName(String name) {
+        if(name == null)
+        {
+            return null;
+        }
         if (name.equals("Iberia")) {
             return "ibiria.pdf";
         } else if (name.equals("Liszt")) {
